@@ -24,7 +24,7 @@ object FindDuplicatedCharacter extends App {
   /**
     * Test runner
     *
-    * @param text
+    * @param text the text to check
     */
   def test(text: String): Unit = {
     println(s"Text [$text] contains duplicated characters: ${isDuplicated(text.toList)}")
