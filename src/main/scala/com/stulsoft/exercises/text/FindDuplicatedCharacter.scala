@@ -19,13 +19,13 @@ object FindDuplicatedCharacter extends App {
   test("aBcb")
   test("aBcB")
 
-  testG(Seq(1,2,3,4))
-  testG(List(1,1,3,4))
-  testG(List(1,2,2,4))
-  testG(List("1","2","2","4"))
-  testG(List("1","2","2",4))
-  testG(List[Char]('1','2','2',55))
-// Error: type mismatch  testG(List[Char]('1','2','2',"55"))
+  testG(Seq(1, 2, 3, 4))
+  testG(List(1, 1, 3, 4))
+  testG(List(1, 2, 2, 4))
+  testG(List("1", "2", "2", "4"))
+  testG(List("1", "2", "2", 4))
+  testG(List[Char]('1', '2', '2', 55))
+  // Error: type mismatch  testG(List[Char]('1','2','2',"55"))
 
   println("<==FindDuplicatedCharacter.main")
 
@@ -38,7 +38,7 @@ object FindDuplicatedCharacter extends App {
     println(s"Text [$text] contains duplicated characters: ${isDuplicated(text.toList)}")
   }
 
-  def testG[T](input:Seq[T]):Unit={
+  def testG[T](input: Seq[T]): Unit = {
     println(s"Input [$input] contains duplicated items: ${isDuplicatedG(input)}")
   }
 
@@ -46,7 +46,7 @@ object FindDuplicatedCharacter extends App {
     * Checks whether a text contains duplicated characters
     *
     * @param text input
-    * @return true, if a text contains duplicated characters; otherwise - false
+    * @return true, if the text contains duplicated characters; otherwise - false
     */
   @tailrec
   def isDuplicated(text: Seq[Char]): Boolean = {
@@ -62,6 +62,13 @@ object FindDuplicatedCharacter extends App {
     }
   }
 
+  /**
+    * Checks whether a text contains duplicated characters
+    *
+    * @param collection collection to check
+    * @tparam T specifies the type of items
+    * @return true, if the collection contains duplicated items; otherwise - false
+    */
   @tailrec
   def isDuplicatedG[T](collection: Seq[T]): Boolean = {
     if (collection == Nil | collection.length == 1)
