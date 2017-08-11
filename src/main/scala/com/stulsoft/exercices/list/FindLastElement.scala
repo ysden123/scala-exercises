@@ -28,12 +28,9 @@ object FindLastElement extends App {
     * @tparam T specifies the type of collection elements
     * @return the last element of a collection
     */
-  def getLastElement[T](collection: Seq[T]): Option[T] = {
-    if (collection == Nil)
-      None
-    else if (collection.length == 1)
-      Some(collection.head)
-    else
-      Some(collection.drop(collection.length - 1).head)
+  def getLastElement[T](collection: Seq[T]): Option[T] = collection match {
+    case col if col == Nil => None
+    case col if col.length == 1 => Some(col.head)
+    case _ => Some(collection.drop(collection.length - 1).head)
   }
 }
