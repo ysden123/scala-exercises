@@ -1,7 +1,5 @@
 package com.stulsoft.exercices.list
 
-import scala.annotation.tailrec
-
 /** Finds the last element of a collection
   *
   * @author Yuriy Stul.
@@ -30,13 +28,12 @@ object FindLastElement extends App {
     * @tparam T specifies the type of collection elements
     * @return the last element of a collection
     */
-  @tailrec
   def getLastElement[T](collection: Seq[T]): Option[T] = {
     if (collection == Nil)
       None
     else if (collection.length == 1)
       Some(collection.head)
     else
-      getLastElement(collection.tail)
+      Some(collection.drop(collection.length - 1).head)
   }
 }
