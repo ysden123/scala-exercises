@@ -1,5 +1,7 @@
 package com.stulsoft.exercices.list
 
+import scala.annotation.tailrec
+
 /** Split a list into two parts.
   *
   * @author Yuriy Stul.
@@ -43,21 +45,17 @@ object SplitListIntoTwoParts extends App {
     * @return list of two lists
     */
   def split2[T](n: Int, ls: List[T]): (List[T],List[T]) = {
-    val result = (List(),List())
-
-    def split(next:List[T]):Unit={
+    @tailrec
+    def split(result: (List[T], List[T]), next: List[T]): (List[T], List[T]) = {
       if (next == Nil)
-        return
+        result
       else if (result._1.length == n){
-        result._2 :: next
-        return
+        (result._1, next)
       } else {
-        result._1 :: next.head
-        split(next.tail)
+        split((result._1 :+ next.head, List()), next.tail)
       }
     }
 
-    split(ls)
-    result
+    split((List[T](), List[T]()), ls)
   }
 }
