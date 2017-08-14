@@ -22,9 +22,16 @@ object ExtractSlice extends App {
 
   def test[T](from: Int, to: Int, ls: List[T]): Unit = {
     println(s"(1) from $from, to $to: $ls --> ${extract1(from, to, ls)}")
+    println(s"(2) from $from, to $to: $ls --> ${extract2(from, to, ls)}")
   }
 
   def extract1[T](from: Int, to: Int, ls: List[T]): List[T] = {
     ls.slice(from, to)
+  }
+
+  def extract2[T](from: Int, to: Int, ls: List[T]): List[T] = {
+    ls.zipWithIndex
+      .filter(t => t._2 >= from && t._2 <= to - 1)
+      .map(t => t._1)
   }
 }
