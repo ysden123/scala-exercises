@@ -4,7 +4,8 @@
 
 package com.stulsoft.exercices.list
 
-/** Pack consecutive duplicates of list elements into sub-lists
+/**
+  * Pack consecutive duplicates of list elements into sub-lists
   *
   * If a list contains repeated elements they should be placed in separate sub-lists.
   * <p>

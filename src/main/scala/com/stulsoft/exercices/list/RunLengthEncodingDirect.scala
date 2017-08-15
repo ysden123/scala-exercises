@@ -4,7 +4,8 @@
 
 package com.stulsoft.exercices.list
 
-/** Run-length encoding of a list
+/**
+  * Run-length encoding of a list
   * <p>
   * Implement the so-called run-length encoding data compression method directly.
   * Converts

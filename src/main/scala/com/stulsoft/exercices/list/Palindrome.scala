@@ -4,7 +4,8 @@
 
 package com.stulsoft.exercices.list
 
-/** Checks whether list is palindrome
+/**
+  * Checks whether list is palindrome
   *
   * @author Yuriy Stul
   */

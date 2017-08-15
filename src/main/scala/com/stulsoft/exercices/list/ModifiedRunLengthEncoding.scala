@@ -1,6 +1,7 @@
 package com.stulsoft.exercices.list
 
-/** Run-length encoding of a list
+/**
+  * Run-length encoding of a list
   *
   * <p>
   * Use the result of problem packConsecutiveDuplicates to implement

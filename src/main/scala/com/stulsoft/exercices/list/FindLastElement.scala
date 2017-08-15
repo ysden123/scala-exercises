@@ -1,6 +1,7 @@
 package com.stulsoft.exercices.list
 
-/** Finds the last element of a collection
+/**
+  * Finds the last element of a collection
   *
   * @author Yuriy Stul.
   */

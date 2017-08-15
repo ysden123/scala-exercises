@@ -4,7 +4,8 @@
 
 package com.stulsoft.exercices.list
 
-/** Flatten nested structure
+/**
+  * Flatten nested structure
   *
   * @author Yuriy Stul
   */

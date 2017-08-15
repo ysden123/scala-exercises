@@ -6,7 +6,8 @@ package com.stulsoft.exercices.list
 
 import scala.collection.immutable.VectorBuilder
 
-/** Reverses a list
+/**
+  * Reverses a list
   *
   * @author Yuriy Stul
   */

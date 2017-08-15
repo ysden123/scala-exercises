@@ -6,7 +6,8 @@ package com.stulsoft.exercices.list
 
 import scala.annotation.tailrec
 
-/** Finds length of collection
+/**
+  * Finds length of collection
   *
   * @author Yuriy Stul
   */

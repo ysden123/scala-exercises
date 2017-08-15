@@ -2,7 +2,8 @@ package com.stulsoft.exercices.list
 
 import scala.annotation.tailrec
 
-/** Split a list into two parts.
+/**
+  * Split a list into two parts.
   *
   * @author Yuriy Stul.
   */

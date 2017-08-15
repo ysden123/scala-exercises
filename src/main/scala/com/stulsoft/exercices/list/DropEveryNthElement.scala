@@ -6,7 +6,8 @@ package com.stulsoft.exercices.list
 
 import scala.annotation.tailrec
 
-/** Drops N-th element
+/**
+  * Drops N-th element
   *
   * @author Yuriy Stul
   */

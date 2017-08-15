@@ -1,6 +1,7 @@
 package com.stulsoft.exercices.list
 
-/** Given a run-length code list generated as specified in problem [[PackConsecutiveDuplicates]], construct its uncompressed version.
+/**
+  * Given a run-length code list generated as specified in problem [[PackConsecutiveDuplicates]], construct its uncompressed version.
   *
   * @author Yuriy Stul.
   */

@@ -4,7 +4,8 @@
 
 package com.stulsoft.exercices.list
 
-/** Defines a k-th element of a collection
+/**
+  * Defines a k-th element of a collection
   *
   * @author Yuriy Stul
   */
