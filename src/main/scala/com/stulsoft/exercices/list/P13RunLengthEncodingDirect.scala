@@ -15,7 +15,7 @@ package com.stulsoft.exercices.list
   *
   * @author Yuriy Stul
   */
-object RunLengthEncodingDirect extends App {
+object P13RunLengthEncodingDirect extends App {
 
   test(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
 

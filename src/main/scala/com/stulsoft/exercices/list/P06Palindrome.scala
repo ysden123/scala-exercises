@@ -9,7 +9,7 @@ package com.stulsoft.exercices.list
   *
   * @author Yuriy Stul
   */
-object Palindrome extends App {
+object P06Palindrome extends App {
   println("==>Palindrome.main")
   test(List(1, 2, 3))
   test(List(1, 2, 2, 1))

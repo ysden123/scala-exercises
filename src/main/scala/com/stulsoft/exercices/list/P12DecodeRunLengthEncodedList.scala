@@ -1,11 +1,11 @@
 package com.stulsoft.exercices.list
 
 /**
-  * Given a run-length code list generated as specified in problem [[PackConsecutiveDuplicates]], construct its uncompressed version.
+  * Given a run-length code list generated as specified in problem [[P09PackConsecutiveDuplicates]], construct its uncompressed version.
   *
   * @author Yuriy Stul.
   */
-object DecodeRunLengthEncodedList extends App {
+object P12DecodeRunLengthEncodedList extends App {
 
   test(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
 
@@ -16,7 +16,7 @@ object DecodeRunLengthEncodedList extends App {
     * @tparam T collection elements type
     */
   def test[T](collection: List[T]): Unit = {
-    println(s"$collection -> ${RunLengthEncoding.runLengthEncode1(collection)} -> ${decode(RunLengthEncoding.runLengthEncode1(collection))}")
+    println(s"$collection -> ${P10RunLengthEncoding.runLengthEncode1(collection)} -> ${decode(P10RunLengthEncoding.runLengthEncode1(collection))}")
   }
 
   /**

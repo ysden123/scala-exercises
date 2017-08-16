@@ -17,7 +17,7 @@ package com.stulsoft.exercices.list
   *
   * @author Yuriy Stul
   */
-object ExtractSlice extends App {
+object P18ExtractSlice extends App {
 
   test(3, 7, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
 

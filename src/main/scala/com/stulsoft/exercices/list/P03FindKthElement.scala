@@ -9,7 +9,7 @@ package com.stulsoft.exercices.list
   *
   * @author Yuriy Stul
   */
-object FindKthElement extends App {
+object P03FindKthElement extends App {
   println("==>FindKthElement.main")
   test(Seq(0, 1, 2, 3), 0)
   test(Seq(0, 1, 2, 3), 2)

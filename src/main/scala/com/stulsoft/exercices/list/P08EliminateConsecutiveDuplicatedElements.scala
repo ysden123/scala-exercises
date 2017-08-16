@@ -19,7 +19,7 @@ import scala.annotation.tailrec
   *
   * @author Yuriy Stul
   */
-object EliminateConsecutiveDuplicatedElements extends App {
+object P08EliminateConsecutiveDuplicatedElements extends App {
 
   test(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
   test(List('a, 'b))

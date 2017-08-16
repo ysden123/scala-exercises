@@ -9,7 +9,7 @@ package com.stulsoft.exercices.list
   *
   * @author Yuriy Stul
   */
-object DuplicateElements extends App {
+object P14DuplicateElements extends App {
   test(List('a, 'b, 'c))
 
   /**

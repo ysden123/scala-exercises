@@ -11,7 +11,7 @@ package com.stulsoft.exercices.list
   *
   * @author Yuriy Stul.
   */
-object ModifiedRunLengthEncoding extends App {
+object P11ModifiedRunLengthEncoding extends App {
 
   test(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
 
@@ -33,7 +33,7 @@ object ModifiedRunLengthEncoding extends App {
     * @return the list of Tuples with length of duplicates for each collection element or element
     */
   def runLengthEncode1[T](collection: List[T]): List[Any] = {
-    PackConsecutiveDuplicates.pack1(collection).map(element => {
+    P09PackConsecutiveDuplicates.pack1(collection).map(element => {
       if (element.length == 1)
         element.head
       else

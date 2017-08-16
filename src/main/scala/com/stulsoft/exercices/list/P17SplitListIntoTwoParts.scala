@@ -7,7 +7,7 @@ import scala.annotation.tailrec
   *
   * @author Yuriy Stul.
   */
-object SplitListIntoTwoParts extends App {
+object P17SplitListIntoTwoParts extends App {
 
   test(3, List(1, 2, 3, 4, 5, 6))
   test(4, List(1, 2, 3, 4, 5, 6))

@@ -11,7 +11,7 @@ import scala.collection.immutable.VectorBuilder
   *
   * @author Yuriy Stul
   */
-object ReverseList extends App {
+object P05ReverseList extends App {
   println("==>ReverseList.main")
   test(List(1, 2, 3, 4))
   test(List())

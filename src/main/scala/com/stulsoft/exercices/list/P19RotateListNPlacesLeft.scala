@@ -14,7 +14,7 @@ import scala.annotation.tailrec
   *
   * @author Yuriy Stul.
   */
-object RotateListNPlacesLeft extends App {
+object P19RotateListNPlacesLeft extends App {
   test(3, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
   test(-2, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
   test(9, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k))

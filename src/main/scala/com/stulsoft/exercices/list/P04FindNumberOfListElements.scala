@@ -11,7 +11,7 @@ import scala.annotation.tailrec
   *
   * @author Yuriy Stul
   */
-object FindNumberOfListElements extends App {
+object P04FindNumberOfListElements extends App {
   test(Seq(1, 2, 3))
   test(Seq())
   test("123".toList)

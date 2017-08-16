@@ -9,7 +9,7 @@ package com.stulsoft.exercices.list
   *
   * @author Yuriy Stul
   */
-object FlattenNestedStructure extends App {
+object P07FlattenNestedStructure extends App {
   test(List(List(1, 3, 5), 4, List(8, 7)))
   test(List(List(1, 3, 5), 4, List(8, 7, List(13, 15))))
   test(Seq(Seq(1, 3, 5), 4, Seq(8, 7, Seq(13, 15))))

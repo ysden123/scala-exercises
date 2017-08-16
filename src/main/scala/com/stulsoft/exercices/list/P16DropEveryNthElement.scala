@@ -11,7 +11,7 @@ import scala.annotation.tailrec
   *
   * @author Yuriy Stul
   */
-object DropEveryNthElement extends App {
+object P16DropEveryNthElement extends App {
 
   test(3, List(1, 2, 3, 4, 5, 6, 7))
 

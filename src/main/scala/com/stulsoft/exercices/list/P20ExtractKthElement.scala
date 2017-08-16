@@ -11,7 +11,7 @@ import scala.annotation.tailrec
   *
   * @author Yuriy Stul.
   */
-object ExtractKthElement extends App {
+object P20ExtractKthElement extends App {
 
   test(List(0, 1, 2, 3, 4, 5), 3)
 

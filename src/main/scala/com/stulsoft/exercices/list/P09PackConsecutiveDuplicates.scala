@@ -17,7 +17,7 @@ package com.stulsoft.exercices.list
   *
   * @author Yuriy Stul
   */
-object PackConsecutiveDuplicates extends App {
+object P09PackConsecutiveDuplicates extends App {
 
   test(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
 
