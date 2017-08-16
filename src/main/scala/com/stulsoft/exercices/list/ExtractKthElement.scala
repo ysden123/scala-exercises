@@ -1,5 +1,7 @@
 package com.stulsoft.exercices.list
 
+import scala.annotation.tailrec
+
 /**
   * Remove the Kth element from a list
   * <p>
@@ -22,6 +24,7 @@ object ExtractKthElement extends App {
     */
   def test[T](list: List[T], k: Int): Unit = {
     println(s"(1) k=$k, $list -> ${extract1(list, k)}")
+    println(s"(2) k=$k, $list -> ${extract2(list, k)}")
   }
 
   /**
@@ -41,5 +44,25 @@ object ExtractKthElement extends App {
     }
   }
 
+  /**
+    * Extract k-th element with recursion
+    *
+    * @param list the list
+    * @param k    k-th element to extract
+    * @tparam T list elements type
+    * @return tuple with list and k-th element
+    */
   def extract2[T](list: List[T], k: Int): Option[(List[T], T)] = {
+    @tailrec
+    def extract(currentK: Int, prefix: List[T], rest: List[T]): Option[(List[T], T)] = (currentK, rest) match {
+      case (_, Nil) => None
+      case (0, head :: tail) => Some((prefix ::: tail, head))
+      case (curK, head :: tail) => extract(curK - 1, prefix :+ head, tail)
+    }
+
+    if (list.isEmpty || k >= list.length)
+      None
+    else
+      extract(k, Nil, list)
+  }
 }
