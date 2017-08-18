@@ -1,4 +1,8 @@
-package com.stulsoft.exercices.list
+/*
+ * Copyright (c) 2017. Yuriy Stul
+ */
+
+package com.stulsoft.exercises.list
 
 /**
   * Create a list containing all integers within a given range

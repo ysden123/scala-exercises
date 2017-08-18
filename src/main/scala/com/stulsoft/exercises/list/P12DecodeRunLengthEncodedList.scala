@@ -1,4 +1,8 @@
-package com.stulsoft.exercices.list
+/*
+ * Copyright (c) 2017. Yuriy Stul
+ */
+
+package com.stulsoft.exercises.list
 
 /**
   * Given a run-length code list generated as specified in problem [[P09PackConsecutiveDuplicates]], construct its uncompressed version.

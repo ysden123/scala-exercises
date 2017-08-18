@@ -2,7 +2,7 @@
  * Copyright (c) 2017. Yuriy Stul
  */
 
-package com.stulsoft.exercices.list
+package com.stulsoft.exercises.list
 
 /**
   * Checks whether list is palindrome

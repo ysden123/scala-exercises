@@ -1,4 +1,8 @@
-package com.stulsoft.exercices.list
+/*
+ * Copyright (c) 2017. Yuriy Stul
+ */
+
+package com.stulsoft.exercises.list
 
 /**
   * Generate a random permutation of the elements of a list

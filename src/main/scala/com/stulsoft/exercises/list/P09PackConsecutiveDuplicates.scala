@@ -2,7 +2,7 @@
  * Copyright (c) 2017. Yuriy Stul
  */
 
-package com.stulsoft.exercices.list
+package com.stulsoft.exercises.list
 
 /**
   * Pack consecutive duplicates of list elements into sub-lists

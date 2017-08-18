@@ -1,4 +1,8 @@
-package com.stulsoft.exercices.list
+/*
+ * Copyright (c) 2017. Yuriy Stul
+ */
+
+package com.stulsoft.exercises.list
 
 /**
   * Run-length encoding of a list
@@ -11,7 +15,7 @@ package com.stulsoft.exercices.list
   *
   * @author Yuriy Stul.
   */
-object P11ModifiedRunLengthEncoding extends App {
+object P10RunLengthEncoding extends App {
 
   test(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
 
@@ -26,19 +30,13 @@ object P11ModifiedRunLengthEncoding extends App {
   }
 
   /**
-    * Builds list of Tuples with length of duplicates for each collection element or element
+    * Builds list of Tuples with length of duplicates for each collection element
     *
     * @param collection the collection
     * @tparam T collection elements type
-    * @return the list of Tuples with length of duplicates for each collection element or element
+    * @return the list of Tuples with length of duplicates for each collection element
     */
-  def runLengthEncode1[T](collection: List[T]): List[Any] = {
-    P09PackConsecutiveDuplicates.pack1(collection).map(element => {
-      if (element.length == 1)
-        element.head
-      else
-        (element.length, element.head)
-    })
+  def runLengthEncode1[T](collection: List[T]): List[(Int, T)] = {
+    P09PackConsecutiveDuplicates.pack1(collection).map(element => (element.length, element.head))
   }
-
 }
