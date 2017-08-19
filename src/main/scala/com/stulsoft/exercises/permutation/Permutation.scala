@@ -5,28 +5,29 @@
 package com.stulsoft.exercises.permutation
 
 /**
+  * @see [[https://gist.github.com/AhmedSoliman/ce17e5dd4927f4349696 Generate Permutations of String in Scala]]
   * @author Yuriy Stul
   */
 object Permutation extends App {
 
-  test("123")
-  //  test(List(1, 2, 3))
+  test(List(1, 2, 3))
 
-  def test(input: String): Unit = {
+  def test(input: List[Int]): Unit = {
     println(s"(1) input: $input, permutations:")
     permutations1(input).foreach(x => println(s"   $x"))
   }
 
-  def permutations1(s: String): List[String] = {
-    def merge(ins: String, c: Char): Seq[String] =
-      for (i <- 0 to ins.length) yield
-        ins.substring(0, i) + c + ins.substring(i, ins.length)
-
-    if (s.length() == 1)
-      List(s)
-    else
-      permutations1(s.substring(0, s.length - 1)).flatMap { p =>
-        merge(p, s.charAt(s.length - 1))
-      }
+  def permutations1(list: List[Int]): List[List[Int]] = list match {
+    case Nil => List(Nil)
+    case List(_) => List(list)
+    case x =>
+      println(x)
+      (
+        for (i <- list.indices.toList) yield {
+          val (before, rest) = list.splitAt(i)
+          val element = rest.head
+          val subPermutations = permutations1(before ++ rest.tail)
+          subPermutations.map(element :: _)
+        }).flatten
   }
 }
