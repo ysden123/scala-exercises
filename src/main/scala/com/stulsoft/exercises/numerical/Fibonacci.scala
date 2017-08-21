@@ -25,6 +25,8 @@ object Fibonacci extends App {
     println(s"(1) n = $n -> ${numbers.length} numbers: $numbers")
     numbers = fibonacci2(n)
     println(s"(2) n = $n -> ${numbers.length} numbers: $numbers")
+
+    println(s"(one 1)  $n -> ${fibonacciOne1(n)}")
   }
 
   /** Generates Fibonacci's number with tail recursion
@@ -64,5 +66,24 @@ object Fibonacci extends App {
       n_1 = newN
     }
     list.toList
+  }
+
+  /** Calculates F(n)
+    *
+    * @param n the n
+    * @return F(n)
+    */
+  def fibonacciOne1(n: Int): Int = {
+    @tailrec
+    def fibonacciOne(v_n_2: Int, v_n_1: Int, currentN: Int): Int = {
+      if (currentN >= n)
+        v_n_1
+      else {
+        val newVal = v_n_2 + v_n_1
+        fibonacciOne(v_n_1, newVal, currentN + 1)
+      }
+    }
+
+    fibonacciOne(0, 1, 2)
   }
 }
