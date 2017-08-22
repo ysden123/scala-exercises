@@ -1,6 +1,12 @@
 package com.stulsoft.exercises.list
 
-/**
+/** Generate the combinations of K distinct objects chosen from the N elements of a list.
+  *
+  * <p>
+  * Example:
+  * {{{combinations(3, List('a, 'b, 'c, 'd, 'e, 'f))}}}
+  * {{{List[List[Symbol]] = List(List('a, 'b, 'c), List('a, 'b, 'd), List('a, 'b, 'e), ...}}}
+  *
   * @author Yuriy Stul.
   */
 object P26GenerateCombinations extends App {
@@ -23,7 +29,7 @@ object P26GenerateCombinations extends App {
     /** flatMapSublists is like list.flatMap, but instead of passing each element
       * to the function, it passes successive sublists of L.
       */
-    def flatMapSublists[A, B](ls: List[A])(f: (List[A]) => List[B]): List[B] =
+    def flatMapSublists[B](ls: List[A])(f: (List[A]) => List[B]): List[B] =
       ls match {
         case Nil => Nil
         case sublist@(_ :: tail) => f(sublist) ::: flatMapSublists(tail)(f) // There are two patterns
