@@ -17,10 +17,13 @@ object P31DetermineWhetherPrime extends App {
   test(5)
   test(6)
 
+  implicit def isPrime(i: Int): MyInt = new MyInt(i)
+
   /** Test runner
     */
   def test(n: Int): Unit = {
     println(s"(1) $n is prime: ${isPrime1(n)}")
+    println(s"(2) $n is prime: ${n.isPrime}")
   }
 
   /** Checks whether n is prime or not
@@ -36,4 +39,9 @@ object P31DetermineWhetherPrime extends App {
     else
       !(2 until n).exists(x => n % x == 0)
   }
+
+  class MyInt(val i: Int) {
+    def isPrime: Boolean = isPrime1(i)
+  }
+
 }
