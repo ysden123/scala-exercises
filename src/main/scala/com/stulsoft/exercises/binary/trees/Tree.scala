@@ -3,7 +3,7 @@ package com.stulsoft.exercises.binary.trees
 /**
   * @author Yuriy Stul.
   */
-trait Tree[+T] {
+sealed trait Tree[+T] {
   def isSymmetric: Boolean
 
   def isMirrorOf[V](t: Tree[V]): Boolean
