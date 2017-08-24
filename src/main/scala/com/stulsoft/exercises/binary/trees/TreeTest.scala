@@ -20,4 +20,10 @@ object TreeTest extends App {
     println(s"n2: $n2")
     println(s"n3: $n3")
   }
+
+  def test3(): Unit = {
+    val n1 = Node('a, Node('b), Node('c, Node('d)))
+    // Error:   n1.isMirrorOf(List("vnbvbnv"))
+    n1.isMirrorOf(Node(List("vnbvbnv")))
+  }
 }
