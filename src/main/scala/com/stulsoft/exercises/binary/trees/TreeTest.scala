@@ -20,4 +20,15 @@ object TreeTest extends App {
   }
 
   test2()
+
+  https://www.google.co.il/search?q=scala+covariant+type+T+occurs+in+contravariant+position+in+type+T+of+value&rlz=1C1GGRV_enIL748IL748&oq=scala+covariant+type+T+occurs+in+contravariant+position+in+type+T+of+value&aqs=chrome..69i57.2856j0j7&sourceid=chrome&ie=UTF-8
+  trait TT[+T]{
+    def f[U :> T](a:U) = ???
+  }
+  class TTT[T] extends TT[T]{
+    override def f(a: Any): Nothing = super.f(a)
+  }
+
+  val ttt = new TTT[String]
+  ttt.f(123)
 }
