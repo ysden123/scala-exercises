@@ -22,7 +22,7 @@ case object End extends Tree[Nothing] {
 
   override def leafCount = 0
 
-  override def leafList: List[Tree[Any]] = Nil
+  override def leafList: List[Tree[Nothing]] = Nil
 }
 
 case class Node[T](value: T, left: Tree[T], right: Tree[T]) extends Tree[T] {
