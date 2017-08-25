@@ -18,6 +18,7 @@ package com.stulsoft.exercises.binary.trees
   */
 object P62CollectInternalNodesList extends App {
 
+  test(Node('a', Node('b'), End))
   test(Node('a', Node('b'), Node('c', Node('d'), Node('e'))))
 
   def test[T](node: Node[T]): Unit = {

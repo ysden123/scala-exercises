@@ -15,6 +15,8 @@ sealed trait Tree[+T] {
   def leafList2: List[T]
 
   def internalList: List[T]
+
+  def atLevel(l: Int): List[T]
 }
 
 case object End extends Tree[Nothing] {
@@ -31,6 +33,8 @@ case object End extends Tree[Nothing] {
   override def leafList2: List[Nothing] = Nil
 
   override def internalList: List[Nothing] = Nil
+
+  override def atLevel(l: Int): List[Nothing] = Nil
 }
 
 case class Node[T](value: T, left: Tree[T], right: Tree[T]) extends Tree[T] {
@@ -73,6 +77,12 @@ case class Node[T](value: T, left: Tree[T], right: Tree[T]) extends Tree[T] {
   override def internalList: List[T] = (left, right) match {
     case (End, End) => Nil
     case _ => value :: left.internalList ::: right.internalList
+  }
+
+  override def atLevel(l: Int): List[T] = l match {
+    case n if n < 1 => Nil
+    case 1 => List(value)
+    case n => left.atLevel(n - 1) ::: right.atLevel(n - 1)
   }
 }
 
