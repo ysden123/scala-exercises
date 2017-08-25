@@ -7,6 +7,8 @@ sealed trait Tree[+T] {
   def isSymmetric: Boolean
 
   def isMirrorOf[V](t: Tree[V]): Boolean
+
+  def leafCount: Int
 }
 
 case object End extends Tree[Nothing] {
@@ -15,6 +17,8 @@ case object End extends Tree[Nothing] {
   override def isSymmetric = true
 
   override def isMirrorOf[V](t: Tree[V]): Boolean = t == End.this
+
+  override def leafCount = 0
 }
 
 case class Node[T](value: T, left: Tree[T], right: Tree[T]) extends Tree[T] {
@@ -35,6 +39,11 @@ case class Node[T](value: T, left: Tree[T], right: Tree[T]) extends Tree[T] {
 
   def addNodeToRight(newNode: Node[T]): Node[T] = {
     Node(value, this.left, newNode)
+  }
+
+  override def leafCount: Int = (left, right) match {
+    case (End, End) => 1
+    case _ => left.leafCount + right.leafCount
   }
 }
 
