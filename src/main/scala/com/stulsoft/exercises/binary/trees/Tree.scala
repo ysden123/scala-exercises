@@ -9,6 +9,8 @@ sealed trait Tree[+T] {
   def isMirrorOf[V](t: Tree[V]): Boolean
 
   def leafCount: Int
+
+  def leafList: List[Tree[T]]
 }
 
 case object End extends Tree[Nothing] {
@@ -19,6 +21,8 @@ case object End extends Tree[Nothing] {
   override def isMirrorOf[V](t: Tree[V]): Boolean = t == End.this
 
   override def leafCount = 0
+
+  override def leafList: List[Tree[Any]] = Nil
 }
 
 case class Node[T](value: T, left: Tree[T], right: Tree[T]) extends Tree[T] {
@@ -44,6 +48,11 @@ case class Node[T](value: T, left: Tree[T], right: Tree[T]) extends Tree[T] {
   override def leafCount: Int = (left, right) match {
     case (End, End) => 1
     case _ => left.leafCount + right.leafCount
+  }
+
+  override def leafList: List[Tree[T]] = (left, right) match {
+    case (End, End) => this :: Nil
+    case _ => left.leafList ::: right.leafList
   }
 }
 
