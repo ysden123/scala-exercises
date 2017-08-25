@@ -11,6 +11,8 @@ sealed trait Tree[+T] {
   def leafCount: Int
 
   def leafList: List[Tree[T]]
+
+  def leafList2: List[T]
 }
 
 case object End extends Tree[Nothing] {
@@ -23,6 +25,8 @@ case object End extends Tree[Nothing] {
   override def leafCount = 0
 
   override def leafList: List[Tree[Nothing]] = Nil
+
+  override def leafList2: List[Nothing] = Nil
 }
 
 case class Node[T](value: T, left: Tree[T], right: Tree[T]) extends Tree[T] {
@@ -51,8 +55,15 @@ case class Node[T](value: T, left: Tree[T], right: Tree[T]) extends Tree[T] {
   }
 
   override def leafList: List[Tree[T]] = (left, right) match {
-    case (End, End) => this :: Nil
+    case (End, End) => List(this)
     case _ => left.leafList ::: right.leafList
+  }
+
+  override def leafList2: List[T] = (left, right) match {
+    case (End, End) =>
+      List(value)
+    case _ =>
+      left.leafList2 ::: right.leafList2
   }
 }
 
