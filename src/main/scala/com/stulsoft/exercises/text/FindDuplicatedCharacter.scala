@@ -6,7 +6,8 @@ package com.stulsoft.exercises.text
 
 import scala.annotation.tailrec
 
-/** Determines whether a text contains duplicated characters.
+/**
+  * Determines whether a text contains duplicated characters.
   *
   * @author Yuriy Stul
   */
