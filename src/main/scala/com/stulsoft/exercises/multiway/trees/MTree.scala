@@ -12,7 +12,9 @@ package com.stulsoft.exercises.multiway.trees
 case class MTree[+T](value: T, children: List[MTree[T]]) {
   def this(value: T) = this(value, List())
 
-  override def toString: String = "M(" + value.toString + " {" + children.map(_.toString).mkString(",") + "})"
+  override def toString: String = value.toString + children.map {
+    _.toString
+  }.mkString("") + "^"
 
   def nodeCount: Int = {
     children match {
