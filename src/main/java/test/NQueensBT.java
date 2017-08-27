@@ -8,8 +8,10 @@ package test;
  */
 public class NQueensBT {
     public int[][] solution;
+    int N;
 
     public NQueensBT(int N) {
+        this.N = N;
         solution = new int[N][N];
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
@@ -40,6 +42,7 @@ public class NQueensBT {
     }
 
     public boolean placeQueens(int queen, int N) {
+        System.out.println("queen is " + queen);
         // will place the Queens one at a time, for column wise
         if (queen == N) {
             //if we are here that means we have solved the problem
@@ -58,6 +61,8 @@ public class NQueensBT {
                 //BACKTRACK
                 solution[row][queen] = 0;
             }
+
+            printSolution();
         }
         //if we are here that means we haven't found solution
         return false;
@@ -90,6 +95,18 @@ public class NQueensBT {
         }
         // if we are here that means we are safe to place Queen at row,column
         return true;
+    }
+
+    void printSolution(){
+        System.out.println();
+        System.out.println();
+
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                System.out.print(" " + solution[i][j]);
+            }
+            System.out.println();
+        }
     }
 
 }
