@@ -7,10 +7,10 @@ package test;
  * @author Yuriy Stul.
  */
 public class NQueensBT {
-    public int[][] solution;
-    int N;
+    private int[][] solution;
+    private int N;
 
-    public NQueensBT(int N) {
+    private NQueensBT(int N) {
         this.N = N;
         solution = new int[N][N];
         for (int i = 0; i < N; i++) {
@@ -24,25 +24,18 @@ public class NQueensBT {
         int N = 4;
         NQueensBT q = new NQueensBT(N);
         q.solve(N);
-
     }
 
-    public void solve(int N) {
+    private void solve(int N) {
         if (placeQueens(0, N)) {
             //print the result
-            for (int i = 0; i < N; i++) {
-                for (int j = 0; j < N; j++) {
-                    System.out.print(" " + solution[i][j]);
-                }
-                System.out.println();
-            }
+            printSolution();
         } else {
             System.out.println("NO SOLUTION EXISTS");
         }
     }
 
-    public boolean placeQueens(int queen, int N) {
-        System.out.println("queen is " + queen);
+    private boolean placeQueens(int queen, int N) {
         // will place the Queens one at a time, for column wise
         if (queen == N) {
             //if we are here that means we have solved the problem
@@ -61,16 +54,14 @@ public class NQueensBT {
                 //BACKTRACK
                 solution[row][queen] = 0;
             }
-
-            printSolution();
         }
+
         //if we are here that means we haven't found solution
         return false;
-
     }
 
     // check if queen can be placed at matrix[row][column]
-    public boolean canPlace(int[][] matrix, int row, int column) {
+    private boolean canPlace(int[][] matrix, int row, int column) {
         // since we are filling one column at a time,
         // we will check if no queen is placed in that particular row
         for (int i = 0; i < column; i++) {
@@ -97,7 +88,7 @@ public class NQueensBT {
         return true;
     }
 
-    void printSolution(){
+    private void printSolution() {
         System.out.println();
         System.out.println();
 
@@ -108,5 +99,4 @@ public class NQueensBT {
             System.out.println();
         }
     }
-
 }
