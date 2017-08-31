@@ -8,10 +8,11 @@ package com.stulsoft.exercises.miscellaneous.problems
   */
 object P96SyntaxChecker extends App {
   test("t")
-  test("ttt")
+  test("abc")
   test("1ttt")
   test("t-tt-456bnvbnv")
   test("")
+  test("-123")
 
   def test(s: String): Unit = {
     println(s"$s is identifier: ${isIdentifier(s)}")
@@ -21,19 +22,16 @@ object P96SyntaxChecker extends App {
     if (s.isEmpty || !s.head.isLetter)
       false
     else {
-      def check(symbols: Seq[Char]): Boolean = {
-        if (symbols == Nil)
-          true
-        else {
-          val symbol = symbols.head
-          if (symbol.isLetterOrDigit || symbol == '-')
-            check(symbols.tail)
-          else
+      def check(symbols: Seq[Char]): Boolean = symbols match {
+        case Nil => true
+        case head :: tail =>
+          if (!head.isLetterOrDigit && head != '-')
             false
-        }
+          else
+            check(tail)
       }
 
-      check(s.tail)
+      check(s.tail.toList)
     }
   }
 }
