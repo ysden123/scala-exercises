@@ -32,7 +32,10 @@ object Permutation extends App {
           val (before, rest) = list.splitAt(i)
           val element = rest.head
           val subPermutations = permutations1(before ++ rest.tail)
-          subPermutations.map(element :: _)
+          println(s"subPermutations: $subPermutations")
+          val r = subPermutations.map(element :: _)
+          println(s"r: $r")
+          r
         }).flatten
   }
 
